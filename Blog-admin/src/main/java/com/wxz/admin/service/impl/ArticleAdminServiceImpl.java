@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class ArticleAdminServiceImpl extends ServiceImpl<ArticleAdminMapper, Article> implements ArticleAdminService {
 
     @Autowired
-    public ArticleAdminMapper articleAdminMapper;
+    private ArticleAdminMapper articleAdminMapper;
 
     @Override
     public Result<PageResult<Article>> getAllArticles() {

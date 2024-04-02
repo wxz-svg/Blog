@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article> implements ArticleWebService {
 
     @Autowired
-    public ArticleWebMapper articleWebMapper;
+    private ArticleWebMapper articleWebMapper;
 
 
     @Override
