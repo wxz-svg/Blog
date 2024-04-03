@@ -3,6 +3,7 @@ package com.wxz.web.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wxz.common.entity.Article;
 import com.wxz.common.pojo.PageResult;
+import com.wxz.web.domain.vo.QueryTagArticlePageListReqVO;
 
 public interface ArticleWebService extends IService<Article> {
     /**
@@ -53,4 +54,11 @@ public interface ArticleWebService extends IService<Article> {
      * @return
      */
     Article collectArticle(Integer articleId);
+
+    /**
+     * 获取标签所属的文章
+     * @param queryTagArticlePageListReqVO
+     * @return
+     */
+    PageResult queryTagArticlePageList(QueryTagArticlePageListReqVO queryTagArticlePageListReqVO);
 }
