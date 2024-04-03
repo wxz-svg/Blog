@@ -1,5 +1,11 @@
-# 配置数据库连接
+
+
+
 spring:
+  application:
+    #服务名称
+    name: blog-admin
+  # 配置数据库连接
   datasource:
     # 数据库连接URL，包括数据库地址、端口、数据库名称以及一些连接参数
     url: jdbc:mysql://localhost:3306/mybatis_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
@@ -29,3 +35,7 @@ spring:
       connection-timeout: 30000
       # 用于检测连接是否有效的SQL查询
       connection-test-query: SELECT 1
+
+
+server:
+  port: 8082
