@@ -25,9 +25,21 @@ public class MybatisPlusConfig {
      */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        //  插件
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        // 分页插件
+        PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor();
+        // 设置最大分页数
+        paginationInnerInterceptor.setMaxLimit(100L);
+        // 是否对超过最大分页时做溢出处理
+        paginationInnerInterceptor.setOverflow(true);
+        // 设置数据库类型
+        paginationInnerInterceptor.setDbType(DbType.MARIADB);
+        //paginationInnerInterceptor.setProperties();
+        // paginationInnerInterceptor.setDialect();
+        //paginationInnerInterceptor.setOptimizeJoin();
         // 添加分页插件
-        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        interceptor.addInnerInterceptor(paginationInnerInterceptor);
         return interceptor;
     }
 

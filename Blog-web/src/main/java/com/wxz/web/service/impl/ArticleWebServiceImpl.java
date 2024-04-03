@@ -6,10 +6,12 @@ import com.wxz.common.pojo.PageResult;
 import com.wxz.web.domain.vo.QueryTagArticlePageListReqVO;
 import com.wxz.web.mapper.ArticleWebMapper;
 import com.wxz.web.service.ArticleWebService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article> implements ArticleWebService {
 
     @Autowired

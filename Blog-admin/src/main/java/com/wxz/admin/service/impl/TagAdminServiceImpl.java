@@ -5,12 +5,14 @@ import com.wxz.admin.domain.dto.TagBackDTO;
 import com.wxz.admin.mapper.TagAdminMapper;
 import com.wxz.admin.service.TagAdminService;
 import com.wxz.common.pojo.PageResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class TagAdminServiceImpl extends ServiceImpl<TagAdminMapper, TagBackDTO> implements TagAdminService {
 
     @Autowired

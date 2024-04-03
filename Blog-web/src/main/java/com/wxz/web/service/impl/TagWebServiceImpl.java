@@ -5,10 +5,12 @@ import com.wxz.common.pojo.Result;
 import com.wxz.web.domain.dto.TagFrontDTO;
 import com.wxz.web.mapper.TagWebMapper;
 import com.wxz.web.service.TagWebService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class TagWebServiceImpl extends ServiceImpl<TagWebMapper, TagFrontDTO> implements TagWebService {
 
     @Autowired

@@ -6,10 +6,12 @@ import com.wxz.admin.service.ArticleAdminService;
 import com.wxz.common.entity.Article;
 import com.wxz.common.pojo.PageResult;
 import com.wxz.common.pojo.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class ArticleAdminServiceImpl extends ServiceImpl<ArticleAdminMapper, Article> implements ArticleAdminService {
 
     @Autowired
