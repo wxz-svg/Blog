@@ -14,7 +14,7 @@ public class CommentAdminController {
     /**
      * 查询所有评论
      */
-    public Result<PageResult<CommentAdminDTO>> findAll(){
+
 
     /**
      * 审核评论
