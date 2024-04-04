@@ -3,6 +3,7 @@ package com.wxz.web.controller;
 import com.wxz.common.pojo.PageResult;
 import com.wxz.common.pojo.Result;
 import com.wxz.web.domain.dto.CategoryDTO;
+import com.wxz.web.domain.vo.CategoryVO;
 import com.wxz.web.domain.vo.QueryCategoryArticlePageListReqVO;
 import com.wxz.web.service.CategoryWebService;
 import io.swagger.annotations.Api;
@@ -27,8 +28,8 @@ public class CategoryWebController {
      * @return
      */
     @PostMapping("/list")
-    @ApiOperation("获取所有分类数据")
-    public Result queryCategoryList() {
+    @ApiOperation("获取所有分类选项")
+    public Result<List<CategoryVO>> queryCategoryList() {
         return categoryWebService.queryCategoryList();
     }
 

@@ -1,16 +1,21 @@
 package com.wxz.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.wxz.admin.domain.dto.ArticleAdminDTO;
+import com.wxz.admin.domain.vo.ArticleAdminVO;
+import com.wxz.admin.domain.vo.ArticleTopFeaturedVO;
 import com.wxz.common.entity.Article;
 import com.wxz.common.pojo.PageResult;
 import com.wxz.common.pojo.Result;
+
+import java.util.List;
 
 public interface ArticleAdminService extends IService<Article> {
     /**
      * 后台获取所有文章
      * @return
      */
-    Result<PageResult<Article>> getAllArticles();
+    Result<PageResult<ArticleAdminVO>> getAllArticles();
 
 
     /**
@@ -18,14 +23,14 @@ public interface ArticleAdminService extends IService<Article> {
      * @param articleId
      * @return
      */
-    Article getArticleById(Integer articleId);
+    Result<ArticleAdminVO> getArticleById(Integer articleId);
 
     /**
      * 后台添加文章
      * @param article
      * @return
      */
-    Article addArticle(Article article);
+    Result<ArticleAdminDTO> addArticle(ArticleAdminDTO article);
 
 
     /**
@@ -33,19 +38,19 @@ public interface ArticleAdminService extends IService<Article> {
      * @param id
      * @param updatedArticle
      */
-    void updateArticle(Long id, Article updatedArticle);
+    Result<ArticleAdminDTO> updateArticle(ArticleAdminDTO updatedArticle);
 
 
     /**
      * 后台删除文章
      * @param id
      */
-    void deleteArticle(Long id);
+    Result deleteArticle(List<Integer> articleIdList);
 
     /**
      * 后台设置文章置顶状态
      * @param id
      * @param isTop
      */
-    void setArticleTopStatus(Long id, boolean isTop);
+    Result setArticleTopStatus(ArticleTopFeaturedVO articleTopFeaturedVO);
 }

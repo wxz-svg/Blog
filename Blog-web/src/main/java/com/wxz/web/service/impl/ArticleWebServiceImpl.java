@@ -3,6 +3,9 @@ package com.wxz.web.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wxz.common.entity.Article;
 import com.wxz.common.pojo.PageResult;
+import com.wxz.web.domain.dto.ArticleDTO;
+import com.wxz.web.domain.vo.ArticleSearchVO;
+import com.wxz.web.domain.vo.ArticleVO;
 import com.wxz.web.domain.vo.QueryTagArticlePageListReqVO;
 import com.wxz.web.mapper.ArticleWebMapper;
 import com.wxz.web.service.ArticleWebService;
@@ -18,11 +21,11 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
     private ArticleWebMapper articleWebMapper;
 
     /**
-     * 获取文章列表
+     * 获取首页文章列表
      * @return
      */
     @Override
-    public PageResult<Article> listArticleByDescTime() {
+    public PageResult<ArticleVO> listArticleByDescTime() {
         return null;
     }
 
@@ -31,7 +34,7 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
      * @return
      */
     @Override
-    public Article listArticleByHot() {
+    public ArticleVO listArticleByHot() {
         return null;
     }
 
@@ -40,7 +43,7 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
      * @return
      */
     @Override
-    public Article listArticleByTop() {
+    public ArticleVO listArticleByTop() {
         return null;
     }
 
@@ -50,7 +53,7 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
      * @return
      */
     @Override
-    public Article listArticlesBySearch(String keyword) {
+    public ArticleSearchVO listArticlesBySearch(String keyword) {
         return null;
     }
 
@@ -60,7 +63,7 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
      * @return
      */
     @Override
-    public Article getArticleHomeById(Integer articleId) {
+    public ArticleVO getArticleHomeById(Integer articleId) {
         return null;
     }
 
@@ -70,7 +73,7 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
      * @return
      */
     @Override
-    public Article likeArticle(Integer articleId) {
+    public ArticleVO likeArticle(Integer articleId) {
         return null;
     }
 
@@ -80,7 +83,7 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
      * @return
      */
     @Override
-    public Article collectArticle(Integer articleId) {
+    public ArticleVO collectArticle(Integer articleId) {
         return null;
     }
 
@@ -92,5 +95,14 @@ public class ArticleWebServiceImpl extends ServiceImpl<ArticleWebMapper, Article
     @Override
     public PageResult queryTagArticlePageList(QueryTagArticlePageListReqVO queryTagArticlePageListReqVO) {
         return null;
+    }
+
+    /**
+     * 发表文章
+     * @param articleDTO
+     */
+    @Override
+    public void publishArticle(ArticleDTO articleDTO) {
+
     }
 }

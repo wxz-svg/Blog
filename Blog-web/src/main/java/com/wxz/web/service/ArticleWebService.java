@@ -3,6 +3,9 @@ package com.wxz.web.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wxz.common.entity.Article;
 import com.wxz.common.pojo.PageResult;
+import com.wxz.web.domain.dto.ArticleDTO;
+import com.wxz.web.domain.vo.ArticleSearchVO;
+import com.wxz.web.domain.vo.ArticleVO;
 import com.wxz.web.domain.vo.QueryTagArticlePageListReqVO;
 
 public interface ArticleWebService extends IService<Article> {
@@ -10,28 +13,28 @@ public interface ArticleWebService extends IService<Article> {
      * 根据创建时间降序分页查询文章列表
      * @return
      */
-    PageResult<Article> listArticleByDescTime();
+    PageResult<ArticleVO> listArticleByDescTime();
 
 
     /**
      * 获取热门文章
      * @return
      */
-    Article listArticleByHot();
+    ArticleVO listArticleByHot();
 
 
     /**
      * 获取置顶文章
      * @return
      */
-    Article listArticleByTop();
+    ArticleVO listArticleByTop();
 
     /**
      * 搜索文章
      * @param keyword
      * @return
      */
-    Article listArticlesBySearch(String keyword);
+    ArticleSearchVO listArticlesBySearch(String keyword);
 
 
     /**
@@ -39,21 +42,21 @@ public interface ArticleWebService extends IService<Article> {
      * @param articleId
      * @return
      */
-    Article getArticleHomeById(Integer articleId);
+    ArticleVO getArticleHomeById(Integer articleId);
 
     /**
      * 点赞文章
      * @param articleId
      * @return
      */
-    Article likeArticle(Integer articleId);
+    ArticleVO likeArticle(Integer articleId);
 
     /**
      * 收藏文章
      * @param articleId
      * @return
      */
-    Article collectArticle(Integer articleId);
+    ArticleVO collectArticle(Integer articleId);
 
     /**
      * 获取标签所属的文章
@@ -61,4 +64,10 @@ public interface ArticleWebService extends IService<Article> {
      * @return
      */
     PageResult queryTagArticlePageList(QueryTagArticlePageListReqVO queryTagArticlePageListReqVO);
+
+    /**
+     * 发表文章
+     * @param articleDTO
+     */
+    void publishArticle(ArticleDTO articleDTO);
 }

@@ -15,6 +15,7 @@ public class RoleWebController {
     private RoleWebService roleWebService;
 
     /**
-     * 查看当前用户对象的角色
+     * 查看当前用户对象的角色---应该不需要展示，直接在用户对象中存储
      */
+
 }
